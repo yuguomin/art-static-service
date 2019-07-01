@@ -1,22 +1,10 @@
-import { Controller, Param, Body, Get, Post, Put, Delete, UploadedFile } from 'routing-controllers';
+import { Controller, Body, Post, Put, UploadedFile } from 'routing-controllers';
 import * as fs from 'fs';
 import * as path from 'path';
-import { mkdirsSync } from './utils/mkdirsSync';
-// import express from 'express;'
+import { mkdirsSync } from '../utils/mkdirsSync';
 
 @Controller()
 export class UserController {
-
-  @Get('/')
-  getAll() {
-    // const data = new Uint8Array(Buffer.from('Hello Node.js!'));
-    // fs.writeFile('./static/a.text', data, (err) => {
-    //   if (err) throw err;
-    //   console.log('The file has been saved!');
-    // })
-    return "This action returns all users";
-  }
-
   @Post("/upload_static")
   uploadedFileInPost(@UploadedFile("file") file: any, @Body() body) {
     if (mkdirsSync('./static/' + body.path)) {
