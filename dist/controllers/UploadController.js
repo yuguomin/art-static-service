@@ -23,10 +23,11 @@ const routing_controllers_1 = require("routing-controllers");
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const mkdirsSync_1 = require("../utils/mkdirsSync");
+const ApiConstant_1 = require("../constant/ApiConstant");
 let UserController = class UserController {
     uploadedFileInPost(file, body) {
-        if (mkdirsSync_1.mkdirsSync('./static/' + body.path)) {
-            const distPath = path.join(process.cwd(), './static/' + body.path, file.originalname);
+        if (mkdirsSync_1.mkdirsSync(ApiConstant_1.STATIC_FOLDER_PATH + body.path)) {
+            const distPath = path.join(process.cwd(), ApiConstant_1.STATIC_FOLDER_PATH + body.path, file.originalname);
             const writeSteam = fs.createWriteStream(distPath);
             writeSteam.write(file.buffer, (err) => {
                 if (err) {
@@ -39,8 +40,8 @@ let UserController = class UserController {
         return "file written successfully";
     }
     uploadedFileInPut(file, body) {
-        if (mkdirsSync_1.mkdirsSync('./static/' + body.path)) {
-            const distPath = path.join(process.cwd(), './static/' + body.path, file.originalname);
+        if (mkdirsSync_1.mkdirsSync(ApiConstant_1.STATIC_FOLDER_PATH + body.path)) {
+            const distPath = path.join(process.cwd(), ApiConstant_1.STATIC_FOLDER_PATH + body.path, file.originalname);
             const writeSteam = fs.createWriteStream(distPath);
             writeSteam.write(file.buffer, (err) => {
                 if (err) {

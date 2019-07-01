@@ -1,11 +1,10 @@
 import app from "./app";
+import { DEFAULT_PORT } from "./constant/ApiConstant";
 
-const port = require('yargs').argv.port || 9090;
+const port = process.env.PORT || DEFAULT_PORT;
+// console.log('env',process.env);
 
-app.listen(port, (err) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
+app.listen(port, () => {
+  // console.log('env', process.env);
   console.log(`Listening on port ${port} success!`);
 });

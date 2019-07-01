@@ -2,9 +2,16 @@
 for art testing environment publish code service
 
 ### start service
+1. install global dependencies
+  * install node
+    - wget -c https://nodejs.org/dist/v8.11.4/node-v8.11.4.tar.gz
+    - tar -zxvf node-v8.11.4.tar.gz
+    - cd node-v8.11.4
+    - 
+  * sudo yarn global add pm2
 1. yarn install
 2. node ./dist/index.js
-3. execute this node command will default listen 9090 port, if you want to set, append --prot=xxx to set.
+3. execute this node command will default listen 9090 port, if you want to set, append --port=xxx to set.
 
 ### upload file
 1. url '/upload_static'
@@ -14,5 +21,5 @@ for art testing environment publish code service
   * path: The files will be tied there
 
 ### get file
-1. url '/', it will map to './static/frontend/'
+1. url '/', this will map to './static/frontend/'
 2. methods GET
