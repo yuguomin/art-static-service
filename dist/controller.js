@@ -23,6 +23,7 @@ const routing_controllers_1 = require("routing-controllers");
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const mkdirsSync_1 = require("./utils/mkdirsSync");
+// import express from 'express;'
 let UserController = class UserController {
     getAll() {
         // const data = new Uint8Array(Buffer.from('Hello Node.js!'));
@@ -62,7 +63,7 @@ let UserController = class UserController {
     }
 };
 __decorate([
-    routing_controllers_1.Get("/users"),
+    routing_controllers_1.Get('/'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)

@@ -1,9 +1,18 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata"); // this shim is required
 const routing_controllers_1 = require("routing-controllers");
 const controller_1 = require("./controller");
-// creates express app, registers all controller routes and returns you express app instance
-exports.app = routing_controllers_1.createExpressServer({
-    controllers: [controller_1.UserController] // we specify controllers we want to use
+const compression_1 = __importDefault(require("compression"));
+const path_1 = require("path");
+const express_1 = __importDefault(require("express"));
+const app = express_1.default();
+const publicPath = path_1.join(__dirname, '../static/frontend');
+app.use('/', compression_1.default(), express_1.default.static(publicPath));
+routing_controllers_1.useExpressServer(app, {
+    controllers: [controller_1.UserController]
 });
+exports.default = app;

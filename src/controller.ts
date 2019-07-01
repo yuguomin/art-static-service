@@ -2,11 +2,12 @@ import { Controller, Param, Body, Get, Post, Put, Delete, UploadedFile } from 'r
 import * as fs from 'fs';
 import * as path from 'path';
 import { mkdirsSync } from './utils/mkdirsSync';
+// import express from 'express;'
 
 @Controller()
 export class UserController {
 
-  @Get("/users")
+  @Get('/')
   getAll() {
     // const data = new Uint8Array(Buffer.from('Hello Node.js!'));
     // fs.writeFile('./static/a.text', data, (err) => {
