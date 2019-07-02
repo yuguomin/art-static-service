@@ -20,6 +20,26 @@ for art testing environment publish code service
 1. url '/', this will map to './static/frontend/'
 2. methods GET
 
-## logs
+### logs
 use winston collect logs, path: '/logs/error.log'
 at present only collect code >= 400 message to log.
+
+### pm2 command
+1. look pm2 process 
+```shell
+pm2 list
+```
+2. delete one process
+```shell
+pm2 delete <id|name>
+```
+3. delete all process
+```shell
+pm2 delete all
+```
+4. open process
+```shell
+pm2 start <path>
+```
+
+[more pm2 command ···](https://pm2.io/doc/zh/runtime/quick-start/)
