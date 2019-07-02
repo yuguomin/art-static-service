@@ -3,11 +3,11 @@ for art testing environment publish code service
 
 ### start service
 1. install global dependencies
-  * install node
+  * [install node](https://nodejs.org/en/download/)
   * sudo yarn global add pm2
-1. yarn install
-2. node ./dist/index.js
-3. execute this node command will default listen 9090 port, if you want to set, append --port=xxx to set.
+2. yarn install
+3. yarn start
+4. it default listen on 9090 port, if you want to change, please write ecosystem.config.js env.PORT, and you can also open more service together.
 
 ### upload file
 1. url '/upload_static'
