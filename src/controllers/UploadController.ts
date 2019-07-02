@@ -16,7 +16,6 @@ export class UserController {
           console.log(err);
           return;
         }
-        console.log('file written successfully');
       });
     }
     return "file written successfully";
