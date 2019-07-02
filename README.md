@@ -4,10 +4,6 @@ for art testing environment publish code service
 ### start service
 1. install global dependencies
   * install node
-    - wget -c https://nodejs.org/dist/v8.11.4/node-v8.11.4.tar.gz
-    - tar -zxvf node-v8.11.4.tar.gz
-    - cd node-v8.11.4
-    - 
   * sudo yarn global add pm2
 1. yarn install
 2. node ./dist/index.js
