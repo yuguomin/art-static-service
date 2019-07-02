@@ -10,9 +10,9 @@ const compression_1 = __importDefault(require("compression"));
 const path_1 = require("path");
 const express_1 = __importDefault(require("express"));
 var morgan = require('morgan');
-const config_1 = __importDefault(require("./winston/config"));
+const index_js_1 = __importDefault(require("../winston/config/index.js"));
 const app = express_1.default();
-app.use(morgan('combined', { stream: config_1.default.stream }));
+app.use(morgan('combined', { stream: index_js_1.default.stream }));
 const publicPath = path_1.join(__dirname, '../static/frontend');
 app.use('/', compression_1.default(), express_1.default.static(publicPath));
 routing_controllers_1.useExpressServer(app, {

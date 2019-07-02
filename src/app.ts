@@ -4,9 +4,11 @@ import {UserController} from "./controllers/UploadController";
 import compression from 'compression';
 import { join } from 'path';
 import express from 'express';
-
+var morgan = require('morgan');
+import winston from './winston/config';
 
 const app = express();
+app.use(morgan('combined', { stream: winston.stream }));
 const publicPath = join(__dirname, '../static/frontend');
 app.use('/', compression(), express.static(publicPath));
 useExpressServer(app, {
