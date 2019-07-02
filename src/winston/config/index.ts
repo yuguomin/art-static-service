@@ -4,7 +4,7 @@ const winston = require('winston');
 const options = {
   error: {
     level: 'error',
-    filename: join(__dirname, `../logs/error.log`),
+    filename: join(__dirname, `../../../logs/error.log`),
     handleExceptions: true,
     json: true,
     maxsize: 5242880, // 5MB

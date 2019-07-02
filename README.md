@@ -19,3 +19,7 @@ for art testing environment publish code service
 ### get file
 1. url '/', this will map to './static/frontend/'
 2. methods GET
+
+## logs
+use winston collect logs, path: '/logs/error.log'
+at present only collect code >= 400 message to log.
