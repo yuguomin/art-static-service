@@ -3,41 +3,41 @@ For art testing environment publish code service
 
 ### Preparation before use
 1. download this package on your server.
-  * 
-  ```
+  * command
+  ```shell
   git clone https://yarn.bootcss.com/docs/install/#mac-stable
   ```
   * or any other way like scp...
 2. install global dependencies
   * [install yarn](https://yarn.bootcss.com/docs/install/#mac-stable)
   * [install node](https://nodejs.org/en/download/)
-  * 
+  * command
   ```shell
   sudo yarn global add pm2
   ```
 3. install package dependencies
-  * cd this folder
-  * 
+  * use command cd this folder
+  * command
   ```shell
   yarn install
   ```
   
 
 ### Start service
-1. cd this folder
-2. 
+1. use command cd this folder
+2. command
 ```shell
 yarn start
 ```
   * will start server and listen on 9090 port, if you want to change, please write ecosystem.config.js env.PORT, and you can also open more service together
-3. 
+3. command
 ```shell
 yarn list
 ```
   * will see pm2 progress management interface
 
 ### Stop service
-1. 
+1. command
 ```shell
 yarn close
 ```
