@@ -9,8 +9,8 @@
     "close": "pm2 delete all"
   },
   "engines": {
-    "node": "^8.11.4",
-    "pm2": "^3.5.1"
+    "node": ">=8.11.4",
+    "pm2": ">=3.5.1"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
