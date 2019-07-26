@@ -17,10 +17,10 @@ const logger = winston.createLogger({
     transports: [
         new winston.transports.File(options.error),
     ],
-    exitOnError: false,
+    exitOnError: false
 });
 logger.stream = {
-    write(message, encoding) {
+    write(message) {
         logger.error(message);
     }
 };

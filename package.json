@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start ecosystem.config.js"
+    "start": "pm2 start ecosystem.config.js",
+    "list": "pm2 list",
+    "close": "pm2 delete all"
   },
   "engines": {
     "node": "^8.11.4",

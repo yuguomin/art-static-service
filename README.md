@@ -1,30 +1,66 @@
 ## art-static-service
-for art testing environment publish code service
+For art testing environment publish code service
 
-### start service
-1. install global dependencies
+### Preparation before use
+1. download this package on your server.
+  * 
+  ```
+  git clone https://yarn.bootcss.com/docs/install/#mac-stable
+  ```
+  * or any other way like scp...
+2. install global dependencies
+  * [install yarn](https://yarn.bootcss.com/docs/install/#mac-stable)
   * [install node](https://nodejs.org/en/download/)
-  * sudo yarn global add pm2
-2. yarn install
-3. yarn start
-4. it default listen on 9090 port, if you want to change, please write ecosystem.config.js env.PORT, and you can also open more service together.
+  * 
+  ```shell
+  sudo yarn global add pm2
+  ```
+3. install package dependencies
+  * cd this folder
+  * 
+  ```shell
+  yarn install
+  ```
+  
 
-### upload file
+### Start service
+1. cd this folder
+2. 
+```shell
+yarn start
+```
+  * will start server and listen on 9090 port, if you want to change, please write ecosystem.config.js env.PORT, and you can also open more service together
+3. 
+```shell
+yarn list
+```
+  * will see pm2 progress management interface
+
+### Stop service
+1. 
+```shell
+yarn close
+```
+  * will use command => pm2 delete all
+  * will stop all pm2 manage process, If you just want to stop one of them, please use pm2 command
+  pm2 delete {process id}
+
+### Upload file
 1. url '/upload_static'
 2. methods POST PUT
 3. params 
   * file: use fs.createReadStream function
   * path: The files will be tied there
 
-### get file
+### Get file
 1. url '/', this will map to './static/frontend/'
 2. methods GET
 
-### logs
+### Error logs
 use winston collect logs, path: '/logs/error.log'
 at present only collect code >= 400 message to log.
 
-### pm2 command
+### pm2 commands
 1. look pm2 process 
 ```shell
 pm2 list
@@ -42,4 +78,6 @@ pm2 delete all
 pm2 start <path>
 ```
 
-[more pm2 command ···](https://pm2.io/doc/zh/runtime/quick-start/)
+### The related documents
+[pm2](https://pm2.io/doc/zh/runtime/quick-start/)
+[windston](https://github.com/winstonjs/winston)
