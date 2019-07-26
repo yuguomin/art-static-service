@@ -5,7 +5,7 @@ For art testing environment publish code service
 1. download this package on your server.
   * command
   ```shell
-  git clone https://yarn.bootcss.com/docs/install/#mac-stable
+  git clone https://github.com/yuguomin/art-static-service.git
   ```
   * or any other way like scp...
 2. install global dependencies
