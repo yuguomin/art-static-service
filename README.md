@@ -44,7 +44,7 @@ yarn close
   * will use command => pm2 delete all
   * will stop all pm2 manage process, If you just want to stop one of them, please use pm2 command
   ```shell
-  pm2 delete {process id}
+  pm2 delete <id|name>
   ```
 
 ### Upload file
